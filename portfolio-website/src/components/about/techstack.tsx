@@ -15,5 +15,6 @@ export const Techstack=[
     { name: "Node", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739627831/Programming_logos_and_icons_by_hrhasnai_15_uprgc0.png", docs: "https://nodejs.org/docs/latest/api/synopsis.html" },
     { name: "Redis", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739629093/Redis_gvbyjd.png", docs:"https://redis.io/docs/latest/"},
     { name: "Next", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739629092/Next.js_ugl5hi.png", docs:"https://nextjs.org/docs"},
+    { name: "Scss", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739628695/Sass_lscsst.png", docs:"https://sass-lang.com/documentation/"},
     { name: "Nodemon", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739629093/Nodemon_krdurs.png", docs:"https://www.npmjs.com/package/nodemon"}
 ];

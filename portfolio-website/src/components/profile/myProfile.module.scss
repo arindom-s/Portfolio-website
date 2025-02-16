@@ -1,0 +1,20 @@
+.ParentProfileclass{
+    display: flex;
+    justify-content: flex-start;
+    gap:2.5rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    text-align: left;
+}
+
+.ProfileCard{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+img{
+    height: 3rem;
+    width: 3rem;
+}
