@@ -1,0 +1,59 @@
+.aboutMeClass{
+    font-size: 2rem;
+    width: 70%;
+}
+.aboutTextClass{
+    width: 40%;
+}
+.myName{
+    color:#C778DD
+}
+
+.contactMeBtn{
+    border-color: #C778DD;
+    border-width: 0.1rem;
+    color: white;
+    height: 2rem;
+    border-radius: 0.3rem;
+}
+
+.myTechStack{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    max-width: 65%;
+    margin: 2rem auto;
+    flex-direction: row;
+}
+
+.techIcon{
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.newHr{
+    width: 60%;
+   text-align: left;
+}
+
+.techName{
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.techItem{
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.techItem:hover .techName{
+    opacity: 1;
+}
+.techCategory{
+    color: #C778DD;
+    display: flex;
+    justify-content: center;
+}
