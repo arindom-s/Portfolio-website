@@ -5,7 +5,7 @@ import { ProjectList } from "./projectLists"
 const ProjectComp=()=>{
     return (
         <>
-            #my-projects:
+            <span style={{fontSize:"1.5rem"}}>#my-projects:</span>
             <hr>
             </hr>
             <div className={styles.ProjectParentClass}>
@@ -15,10 +15,10 @@ const ProjectComp=()=>{
                     <hr></hr>
                     <span style={{ fontWeight: "bold", color: "#c778dd" }}>{project.name}</span>
                     <br></br>
-                    <span>{project.stack}</span>
+                    <span className={styles.stackClass}>{project.stack}</span>
                     <p>{project.description}
                     </p>
-                    <div className={styles.ProjectLink}>{project.link}</div>
+                    <a target="_blank" href={project.link}><button className={styles.Viewbtn}>Visit site!</button></a>
                 </div>
             ))}
             

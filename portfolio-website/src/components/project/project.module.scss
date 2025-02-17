@@ -17,3 +17,25 @@
     justify-content: center;
     border: 1px solid #C778DD;
 }
+
+.stackClass{
+background: linear-gradient(90deg, aqua, white, aqua);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: background-position 0.4s ease-in-out;
+   
+    &:hover {
+        background-position: -100% 0;
+    }
+}
+.ProjectImg{
+    height: fit-content;
+    width: 20rem;
+}
+
+.Viewbtn{
+    border-radius: 2rem;
+}
