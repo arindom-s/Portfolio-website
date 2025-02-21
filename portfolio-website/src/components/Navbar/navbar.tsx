@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className={styles.navbarparent}>
            <div id={styles.nameid}>Arindom</div>
            <div className={styles.sectionclass}>
-             <div>#about-me</div>
+             <div>#my-resume</div>
              <div>#tech-stack</div>
              <div>#my-projects</div>
            </div>
