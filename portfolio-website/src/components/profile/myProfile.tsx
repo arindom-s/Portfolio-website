@@ -5,7 +5,7 @@ export default function Profile(){
     return(
         <>
         <div className={styles.ProfileParent}>
-            <span style={{fontSize:"1.5rem"}}>#my-profiles:</span>
+            <span style={{fontSize:"1.5rem"}}>#my-Leetcode:</span>
             <hr></hr>
             <LeetGitProfile/>
         </div>

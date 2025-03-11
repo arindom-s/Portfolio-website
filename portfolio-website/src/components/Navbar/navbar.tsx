@@ -7,9 +7,10 @@ const Navbar = () => {
         <div className={styles.navbarparent}>
            <div id={styles.nameid}>Arindom</div>
            <div className={styles.sectionclass}>
-             <div>#my-resume</div>
-             <div>#tech-stack</div>
-             <div>#my-projects</div>
+          <div>
+            <a href='https://drive.google.com/file/d/1KiK2QpDEaBK06Uuezjic2ZMYvTdSpWHE/view?usp=sharing' target='_blank'>
+            #my-resume</a>
+          </div>
            </div>
         </div>
     </div>
