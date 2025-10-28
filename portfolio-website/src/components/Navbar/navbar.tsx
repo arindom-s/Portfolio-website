@@ -8,7 +8,7 @@ const Navbar = () => {
            <div id={styles.nameid}>Arindom</div>
            <div className={styles.sectionclass}>
           <div>
-            <a href='https://drive.google.com/file/d/1KiK2QpDEaBK06Uuezjic2ZMYvTdSpWHE/view?usp=sharing' target='_blank'>
+            <a href='https://drive.google.com/file/d/1nif68TtGpijRuPW2QxUurTr2Zppl3hWx/view?usp=sharing' target='_blank'>
             #my-resume</a>
           </div>
            </div>

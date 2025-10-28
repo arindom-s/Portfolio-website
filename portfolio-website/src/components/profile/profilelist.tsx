@@ -1,6 +1,10 @@
 import styles from "./myProfile.module.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {request, gql} from "graphql-request"
+import { PieChart,Pie,Cell,Tooltip,Legend } from "recharts";
+
+const graphQl_endpoint= "https://leetcode.com/graphql";
 
 const leetcode_username = "heisenburger123";
 
@@ -10,75 +14,66 @@ export default function LeetGitProfile() {
   const [solvedMedium, setSolvedMedium] = useState<number | null>(null);
   const [solvedHard, setSolvedHard] = useState<number | null>(null);
 
-  useEffect(() => {
-    axios
-      .get(`https://leetcode-stats-api.herokuapp.com/${leetcode_username}`)
-      .then((response) => {
-        setSolved(response.data.totalSolved);
-        setSolvedEasy(response.data.easySolved);
-        setSolvedMedium(response.data.mediumSolved);
-        setSolvedHard(response.data.hardSolved);
-      })
-      .catch((error) =>
-        console.error("Error fetching LeetCode details", error)
-      );
-  }, []);
+  useEffect(()=>{
+    const fetchLeetcodeData= async()=>{
+      const query= gql`{matchedUser(username: "${leetcode_username}"){
+       submitStatsGlobal{
+       acSubmissionNum{
+        difficulty
+        count
+       }
+       }
+      }
+    }`;
+    try{
+      const response=await request(graphQl_endpoint, query);
+      console.log("Leetcode API Response:", response);
 
-  // const profileArr = [
-  //   {
-  //     name: "LeetCode",
-  //     profilelink: `https://leetcode.com/u/${leetcode_username}/`,
-  //     logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
-  //     value:
-  //       solved !== null
-  //         ? `Total: ${solved} (Easy: ${solvedEasy}, Medium: ${solvedMedium}, Hard: ${solvedHard})`
-  //         : "Loading...",
-  //   },
-  // ];
+      const submissions=response.matchedUser.submitStatsGlobal.acSubmissionNum;
+      const easy= submissions.find((sub:any)=>sub.difficulty==="Easy")?.count||0;
+      const med=submissions.find((sub:any)=>sub.difficulty==="Medium")?.count||0;
+      const hard=submissions.find((sub:any)=>sub.difficulty==="Hard")?.count||0;
 
-  // return (
-  //   <div className={styles.ParentProfileclass}>
-  //     <div className={styles.SolvedClass}>
-  //         <div className={styles.ProfileCard}>
-  //           <a href={`https://leetcode.com/u/${leetcode_username}/`} target="_blank">
-  //             <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="Leetcode Logo" />
-  //           </a>
-  //         </div>
-  //           Total Solved:{solved!==null? solved: "Loading.."}
-  //           <div className={styles.SolvedBox} id={styles.easy}>
-  //             <p>Easy:{solvedEasy!==null? solvedEasy: "Loading.."}</p>
-  //           </div>
-  //           <div className={styles.SolvedBox} id={styles.medium}>
-  //            <p>Medium:{solvedMedium!==null? solvedMedium: "Loading.."}</p>
-  //           </div>
-  //       <div className={styles.SolvedBox} id={styles.hard}>
-  //            <p>Hard:{solvedHard!==null? solvedHard:"Loading.."}</p>
-  //           </div>
-  //         </div>
-  //   </div>
-  // );
+      setSolved(easy+med+hard);
+      setSolvedEasy(easy);
+      setSolvedMedium(med);
+      setSolvedHard(hard);
+    }
+    catch{
+      console.log("Error fetching details")
+    }
+    };
+    fetchLeetcodeData();
+  },[]);
+
+  const data=[
+    {name:"Easy",value: solvedEasy || 0, color:"#00C49F"},
+    {name:"Medium", value: solvedMedium || 0, color: "#FFBB28"},
+    {name:"Hard", value: solvedHard || 0, color: "##FF8042"}
+  ];
+  
   return (
-    <div className={styles.ParentProfileclass}>
-      <div className={styles.SolvedBox} id={styles.total}>
-        Total
-        <div className={styles.HiddenCount}>{solved !== null ? solved : "Loading.."}</div>
-      </div>
-
-      <div className={styles.SolvedBox} id={styles.easy}>
-        Easy
-        <div className={styles.HiddenCount}>{solvedEasy !== null ? solvedEasy : "Loading.."}</div>
-      </div>
-
-      <div className={styles.SolvedBox} id={styles.medium}>
-        Medium
-        <div className={styles.HiddenCount}>{solvedMedium !== null ? solvedMedium : "Loading.."}</div>
-      </div>
-
-      <div className={styles.SolvedBox} id={styles.hard}>
-        Hard
-        <div className={styles.HiddenCount}>{solvedHard !== null ? solvedHard : "Loading.."}</div>
-      </div>
-    </div>
+     <>
+     <div className={styles.ParentProfileClass}>
+        <div className={styles.ProfileCard}>
+          <a href={`https://leetcode.com/u/${leetcode_username}/`} target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="Leetcode Logo" />
+          </a>
+        </div>
+        <div className={styles.ChartContainer}>
+          <h2>Total solved: {solved!==null ? solved : "Loading.."} </h2>
+          <PieChart width={300} height={300}>
+            <Pie data={data} cx="50%" cy="50%" outerRadius={100} fill="#8884d8" dataKey="value">
+              {data.map((entry,index)=>(
+                <Cell key={`cell-${index}`} fill={entry.color}></Cell>
+              ))}
+            </Pie>
+            <Tooltip/>
+            <Legend/>
+          </PieChart>
+        </div>
+     </div>
+     </>
   );
 
   

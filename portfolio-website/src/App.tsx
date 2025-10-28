@@ -1,19 +1,21 @@
 import './App.css'
 import Navbar from './components/Navbar/navbar'
 import About from './components/about/about'
-import Profile from './components/profile/myProfile'
 import ProjectComp from './components/project/project'
+import SocialBar from './components/socialbar/socialBar'
 
 function App() {
-  return(
+  return (
     <>
-    <Navbar/>
-    <About/>
-    <ProjectComp/>
-    <Profile/>
+      <div className='parentDiv'>
+        <Navbar />
+        <About />
+        <ProjectComp />
+        <SocialBar />
+      </div>
     </>
   )
-  
+
 }
 
 export default App

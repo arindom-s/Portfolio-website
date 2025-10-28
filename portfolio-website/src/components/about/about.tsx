@@ -12,9 +12,9 @@ export default function About(){
                     Hello there! I am <span className={styles.myName}> Arindom Sarmah</span>, an engineering undergraduate from National Institute of Technology Silchar.
             </p>
             <p className={styles.aboutTextClass}>
-                I am a C++ programmer passionate about solving a variety of problems in platforms like LeetCode & Codeforces.
-                I am also a Full stack developer and really intrigued about the wonderful world of web!
-                I am also an avid quizzer who likes to gulp in daily doses of knowledge
+                A MERN stack fanboy who writes in Typescript cause why not type-safety.
+                Been learning Go lately and it has been cool as well. When it comes to programming, my loyalty goes out to C++, my first love.
+                Hobbies? Many.Quizzing is the one I am the most proud of. You might see me reading random articles on the net just because it seemed fun or maybe there is a quiz tomorrow.
             </p>
             <button className={styles.contactMeBtn}>
                 Contact me
