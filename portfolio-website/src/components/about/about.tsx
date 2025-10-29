@@ -1,7 +1,7 @@
 import styles from "./about.module.scss"
 import { Techstack } from "./techstack"
 
-export default function About(){
+export default function About({onContactClick}){
     const languages=Techstack.filter((tech)=>(tech.type==="language"));
     const frameworkTools=Techstack.filter((tech)=>(tech.type==="frameworks&tools"));
 
@@ -13,10 +13,10 @@ export default function About(){
             </p>
             <p className={styles.aboutTextClass}>
                 A MERN stack fanboy who writes in Typescript cause why not type-safety.
-                Been learning Go lately and it has been cool as well. When it comes to programming, my loyalty goes out to C++, my first love.
+                Been learning System Design lately and it has been cool as well. When it comes to programming, my loyalty goes out to C++, my first love.
                 Hobbies? Many.Quizzing is the one I am the most proud of. You might see me reading random articles on the net just because it seemed fun or maybe there is a quiz tomorrow.
             </p>
-            <button className={styles.contactMeBtn}>
+            <button className={styles.contactMeBtn} onClick={onContactClick}>
                 Contact me
             </button>
             <p style={{fontSize:"1.5rem"}}>#my-tech-stack<hr></hr></p>
