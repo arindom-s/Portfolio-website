@@ -1,7 +1,10 @@
 import styles from "./about.module.scss"
 import { Techstack } from "./techstack"
 
-export default function About({onContactClick}){
+type AboutProps={
+    onContactClick: ()=>void;
+};
+export default function About({onContactClick}: AboutProps){
     const languages=Techstack.filter((tech)=>(tech.type==="language"));
     const frameworkTools=Techstack.filter((tech)=>(tech.type==="frameworks&tools"));
 

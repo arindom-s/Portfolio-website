@@ -4,7 +4,7 @@ import { CiMobile1 } from "react-icons/ci";
 import {forwardRef} from "react";
 
 import styles from "./contact.module.scss"
- const Contact=forwardRef<HTMLDivElement,{}>((props,ref)=>(
+ const Contact=forwardRef<HTMLDivElement,{}>((_,ref)=>(
         <div ref={ref} className={styles.parentContact}>
                 <p>#contact-me<hr/></p>
             <div className={styles.contactClass}>
