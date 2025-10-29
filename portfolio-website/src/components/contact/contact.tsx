@@ -1,7 +1,7 @@
 import { CiMail } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { CiMobile1 } from "react-icons/ci";
-import React, {forwardRef} from "react";
+import {forwardRef} from "react";
 
 import styles from "./contact.module.scss"
  const Contact=forwardRef<HTMLDivElement,{}>((props,ref)=>(
