@@ -17,5 +17,7 @@ export const Techstack=[
     { name: "Next", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1761649204/icons8-next.js-48_sxezxm.png", docs:"https://nextjs.org/docs"},
     { name: "Scss", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739628695/Sass_lscsst.png", docs:"https://sass-lang.com/documentation/"},
     { name: "Nodemon", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1739629093/Nodemon_krdurs.png", docs:"https://www.npmjs.com/package/nodemon"},
-    { name: "Go", type: "language", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1761649119/icons8-golang-48_hmuado.png", docs:"https://go.dev/doc/"}
+    { name: "Go", type: "language", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1761649119/icons8-golang-48_hmuado.png", docs:"https://go.dev/doc/"},
+    { name: "RabbitMQ", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1762439892/RabbitMQ_kfhhdg.png", docs: "https://www.rabbitmq.com/"},
+    { name: "Nginx", type: "frameworks&tools", imgSrc: "https://res.cloudinary.com/dl0knguhb/image/upload/v1762439888/NGINX_anjzi2.png", docs:"https://docs.nginx.com/"}
 ];
